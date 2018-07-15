@@ -1,0 +1,15 @@
+goos: darwin
+goarch: amd64
+pkg: github.com/yauritux/benchmarking
+BenchmarkFib20-8   	   30000	     44822 ns/op
+BenchmarkFib20-8   	   30000	     44966 ns/op
+BenchmarkFib20-8   	   30000	     44948 ns/op
+BenchmarkFib20-8   	   30000	     45058 ns/op
+BenchmarkFib20-8   	   30000	     44980 ns/op
+BenchmarkFib20-8   	   30000	     44827 ns/op
+BenchmarkFib20-8   	   30000	     44795 ns/op
+BenchmarkFib20-8   	   30000	     44983 ns/op
+BenchmarkFib20-8   	   30000	     44956 ns/op
+BenchmarkFib20-8   	   30000	     44733 ns/op
+PASS
+ok  	github.com/yauritux/benchmarking	18.031s
