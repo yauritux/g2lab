@@ -26,8 +26,8 @@ func main() {
 	number := 589
 	sqrch := make(chan int)
 	cubech := make(chan int)
-	go calculateSquares(number, sqrch)
-	go calculateCubes(number, cubech)
+	calculateSquares(number, sqrch)
+	calculateCubes(number, cubech)
 	squares, cubes := <-sqrch, <-cubech
 	fmt.Println("Final Output", squares+cubes)
 }
