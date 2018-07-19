@@ -80,3 +80,46 @@ Fib20-8  44.9µs ± 0%  28.4µs ± 1%  -36.82%  (p=0.000 n=10+10)
 *Tip*: p values above 0.05 are suspect, increase -count to add more samples.
 
 
+## Avoid benchmarking start up costs
+
+Sometimes your benchmark has a once per run setup cost. `b.ResetTimer()` can be used to ignore the time accrued in setup.
+
+```
+func BenchmarkExpensive(b *testing.B) {
+  boringAndExpensiveSetup()
+  b.ResetTimer()
+  for n:= 0; n < b.N; n++ {
+    // function under test
+  }
+}
+```
+
+If you have some experience setup logic per loop iteration, use `b.StopTimer()` and `b.StartTimer()` to pause the benchmark timer.
+
+```
+func BenchmarkComplicated(b *testing.B) {
+  for n := 0; n < b.N; n++ {
+    b.StopTimer()
+    complicatedSetup()
+    b.StartTimer()
+    // function under test
+  }
+}
+```
+
+## Benchmarking allocations
+
+Allocation count and size is strongly correlated with benchmark time.
+
+You can tell the testing framework to record the number of allocations made by code under test.
+
+```
+package q
+
+func BenchmarkRead(b *testing.B) {
+  b.ReportAllocs()
+  for n:= 0; n < b.N; n++ {
+    // function under test
+  }
+}
+```
