@@ -12,13 +12,14 @@
 
 **Part 2 - Write Code**
 
-From within `lab-1` folder, create a **java** source file with the following code:
+From within `lab-1` folder, create a **java** source file (`Greeting.java`) with the following code:
 
 ```
 public class Greeting {
 
   public static void main(String... args) {
     System.out.println("Hi.., welcome to G2Lab Java MiniClass.");
+  }
 }
 ```
   
