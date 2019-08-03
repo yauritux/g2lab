@@ -4,9 +4,10 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 )
 
-var items map[int]item
+var items = make(map[string]item, 5)
 
 type customer struct {
 	name     string
@@ -27,6 +28,7 @@ type defaultAddress struct {
 }
 
 type item struct {
+	id    string
 	name  string
 	stock int
 	price int
@@ -55,8 +57,29 @@ func showMenu() {
 	fmt.Print("> ")
 }
 
-func productEntry() {
-	fmt.Println("call product entry")
+func productEntry(scanner *bufio.Scanner) {
+	var item item
+	fmt.Print("\nItem code:")
+	scanner.Scan()
+	item.id = scanner.Text()
+	fmt.Print("\nItem name: ")
+	scanner.Scan()
+	item.name = scanner.Text()
+	fmt.Print("\nItem stock: ")
+	scanner.Scan()
+	item.stock, _ = strconv.Atoi(scanner.Text())
+	fmt.Print("\nItem price: ")
+	scanner.Scan()
+	item.price, _ = strconv.Atoi(scanner.Text())
+	items[item.id] = item
+}
+
+func showProducts() {
+	for _, v := range items {
+		fmt.Println("Item Code:", v.id)
+		fmt.Println("Item Name:", v.name)
+		fmt.Println()
+	}
 }
 
 func main() {
@@ -69,7 +92,9 @@ menu:
 		selectedOption = scanner.Text()
 		switch selectedOption {
 		case "1.1":
-			productEntry()
+			productEntry(scanner)
+		case "1.2":
+			showProducts()
 		case "3":
 			fmt.Println("Thanks for your visit!")
 			break menu
