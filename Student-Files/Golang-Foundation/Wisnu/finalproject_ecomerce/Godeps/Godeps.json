@@ -1,0 +1,127 @@
+{
+	"ImportPath": "github.com/alioygur/gocart",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v74",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/alioygur/is",
+			"Comment": "v1.0.3-4-g204f487",
+			"Rev": "204f48747743cfc9b98e55f3f64b7ff483942140"
+		},
+		{
+			"ImportPath": "github.com/chuckpreslar/emission",
+			"Rev": "a7ddd980baf9ec8ad3f2e6826ef9eacfe55b3f02"
+		},
+		{
+			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"Comment": "v3.0.0-8-g24c63f5",
+			"Rev": "24c63f56522a87ec5339cc3567883f1039378fdb"
+		},
+		{
+			"ImportPath": "github.com/go-sql-driver/mysql",
+			"Comment": "v1.3-2-g2e00b5c",
+			"Rev": "2e00b5cd70399450106cec6431c2e2ce3cae5034"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.1-27-g757bef9",
+			"Rev": "757bef944d0f21880861c2dd9c871ca543023cba"
+		},
+		{
+			"ImportPath": "github.com/justinas/alice",
+			"Comment": "1.0.0-16-g1051eaf",
+			"Rev": "1051eaf52fcafdd87ead59d28b065f1fcb8274ec"
+		},
+		{
+			"ImportPath": "github.com/mattes/migrate/driver",
+			"Comment": "v1.3.0-74-gde494e4",
+			"Rev": "de494e4b98e924aff696990bc24629108bb8f76b"
+		},
+		{
+			"ImportPath": "github.com/mattes/migrate/driver/mysql",
+			"Comment": "v1.3.0-74-gde494e4",
+			"Rev": "de494e4b98e924aff696990bc24629108bb8f76b"
+		},
+		{
+			"ImportPath": "github.com/mattes/migrate/file",
+			"Comment": "v1.3.0-74-gde494e4",
+			"Rev": "de494e4b98e924aff696990bc24629108bb8f76b"
+		},
+		{
+			"ImportPath": "github.com/mattes/migrate/migrate",
+			"Comment": "v1.3.0-74-gde494e4",
+			"Rev": "de494e4b98e924aff696990bc24629108bb8f76b"
+		},
+		{
+			"ImportPath": "github.com/mattes/migrate/migrate/direction",
+			"Comment": "v1.3.0-74-gde494e4",
+			"Rev": "de494e4b98e924aff696990bc24629108bb8f76b"
+		},
+		{
+			"ImportPath": "github.com/mattes/migrate/pipe",
+			"Comment": "v1.3.0-74-gde494e4",
+			"Rev": "de494e4b98e924aff696990bc24629108bb8f76b"
+		},
+		{
+			"ImportPath": "github.com/pkg/errors",
+			"Comment": "v0.8.0-2-g248dadf",
+			"Rev": "248dadf4e9068a0b3e79f02ed0a610d935de5302"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/bcrypt",
+			"Rev": "b82246307bd525fde15c1df976318003716bca68"
+		},
+		{
+			"ImportPath": "golang.org/x/crypto/blowfish",
+			"Rev": "b82246307bd525fde15c1df976318003716bca68"
+		},
+		{
+			"ImportPath": "gopkg.in/alioygur/gores.v1",
+			"Comment": "v1.2",
+			"Rev": "06418f94b4e89de783ace6bfef2204447bce27c4"
+		},
+		{
+			"ImportPath": "upper.io/db.v2",
+			"Comment": "v2.0.2",
+			"Rev": "e1a9bb41958ab72a9a76f2b3342a7a1b47591d6f"
+		},
+		{
+			"ImportPath": "upper.io/db.v2/internal/cache",
+			"Comment": "v2.0.2",
+			"Rev": "e1a9bb41958ab72a9a76f2b3342a7a1b47591d6f"
+		},
+		{
+			"ImportPath": "upper.io/db.v2/internal/cache/hashstructure",
+			"Comment": "v2.0.2",
+			"Rev": "e1a9bb41958ab72a9a76f2b3342a7a1b47591d6f"
+		},
+		{
+			"ImportPath": "upper.io/db.v2/internal/sqladapter",
+			"Comment": "v2.0.2",
+			"Rev": "e1a9bb41958ab72a9a76f2b3342a7a1b47591d6f"
+		},
+		{
+			"ImportPath": "upper.io/db.v2/internal/sqladapter/exql",
+			"Comment": "v2.0.2",
+			"Rev": "e1a9bb41958ab72a9a76f2b3342a7a1b47591d6f"
+		},
+		{
+			"ImportPath": "upper.io/db.v2/lib/reflectx",
+			"Comment": "v2.0.2",
+			"Rev": "e1a9bb41958ab72a9a76f2b3342a7a1b47591d6f"
+		},
+		{
+			"ImportPath": "upper.io/db.v2/lib/sqlbuilder",
+			"Comment": "v2.0.2",
+			"Rev": "e1a9bb41958ab72a9a76f2b3342a7a1b47591d6f"
+		},
+		{
+			"ImportPath": "upper.io/db.v2/mysql",
+			"Comment": "v2.0.2",
+			"Rev": "e1a9bb41958ab72a9a76f2b3342a7a1b47591d6f"
+		}
+	]
+}

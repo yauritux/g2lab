@@ -1,0 +1,5 @@
+export ENV=development
+export SECRET_KEY=YOUR-SECRET-KEY
+export MYSQL_URL = mysql://root:@localhost:3306/finalproject
+export PASSWORD_RESET_URL=YOUR-DEFAULT-PASSWORD-RESET-URL
+export ACTIVATION_URL=YOUR-DEFAULT-ACTIVATION-URL
