@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package calculator;
+option go_package="calculatorpb";
+
+message Request {
+    int64 num1 = 1;
+    int64 num2 = 2;
+}
+
+message Response {
+    int64 result = 1;
+}
+
+message PrimeNumberDecRequest {
+    int64 number = 1;
+}
+
+message PrimeNumberDecResponse {
+    int64 prime_factor = 1;
+}
+
+message SquareRootRequest {
+    int32 number = 1;
+}
+
+message SquareRootResponse {
+    double number_root = 1;
+}
+
+service CalculatorService {
+    rpc Sum(Request) returns (Response) {};
+
+    rpc PrimeNumberDecomposition(PrimeNumberDecRequest) returns (stream PrimeNumberDecResponse) {};
+
+    // error handling
+    // this RPC will throw an exception if the sent number is negative
+    // The error being sent is of type INVALID_ARGUMENT
+    rpc SquareRoot(SquareRootRequest) returns (SquareRootResponse) {};
+}
