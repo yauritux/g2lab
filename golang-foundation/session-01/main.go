@@ -22,6 +22,6 @@ func main() {
 	scanner.Scan()
 	price, _ := strconv.Atoi(scanner.Text())
 	fmt.Println("Welcome,", name)
-	fmt.Printf("Your've ordered %d %v\n", qty, item)
+	fmt.Printf("You've ordered %d %v|s\n", qty, item)
 	fmt.Printf("Total price: %d\n", price*qty)
 }

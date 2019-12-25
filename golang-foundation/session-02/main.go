@@ -9,24 +9,6 @@ import (
 
 var items = make(map[string]item, 5)
 
-type customer struct {
-	name     string
-	email    string
-	phone    string
-	shipping shippingAddress
-	address  defaultAddress
-}
-
-type shippingAddress struct {
-	streetName, city, postCode string
-}
-
-type defaultAddress struct {
-	streetName string
-	city       string
-	postCode   string
-}
-
 type item struct {
 	id    string
 	name  string
@@ -34,30 +16,17 @@ type item struct {
 	price int
 }
 
-type cart struct {
-	customer   customer
-	orderedQty int
-	item       item
-}
-
 func showMenu() {
-	fmt.Printf("\nAdmin Menu:\n")
-	fmt.Println("1.1 Product Entry")
-	fmt.Println("1.2 Edit Product")
+	fmt.Println("Program Menu:")
+	fmt.Println("1 Product Entry")
+	fmt.Println("2 Browse Product")
+	fmt.Println("3 Exit")
 	fmt.Println()
-	fmt.Println("Customer Menu:")
-	fmt.Println("2.1 Browse Product")
-	fmt.Println("2.2 Add to Cart")
-	fmt.Println("2.3 Show Cart Items")
-	fmt.Println("2.4 Checkout")
-	fmt.Println()
-	fmt.Println("3. Exit")
-	fmt.Println()
-	fmt.Println("Please enter your selected menu number [e.g.: '1.1', '2.1', etc], or '3' to end the program.")
+	fmt.Println("Please enter your selected menu number [e.g.: '1', '2'], or '3' to exit the program.")
 	fmt.Print("> ")
 }
 
-func productEntry(scanner *bufio.Scanner) {
+func addProduct(scanner *bufio.Scanner) {
 	var item item
 	fmt.Print("\nItem code:")
 	scanner.Scan()
@@ -72,9 +41,14 @@ func productEntry(scanner *bufio.Scanner) {
 	scanner.Scan()
 	item.price, _ = strconv.Atoi(scanner.Text())
 	items[item.id] = item
+	fmt.Printf("Successfully added %s into the system.\n\n", item.name)
 }
 
 func showProducts() {
+	if len(items) == 0 {
+		fmt.Println("--- No Products to be displayed ---")
+		return
+	}
 	for _, v := range items {
 		fmt.Println("Item Code:", v.id)
 		fmt.Println("Item Name:", v.name)
@@ -84,20 +58,28 @@ func showProducts() {
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
-	var selectedOption string
+	var opt string
 menu:
 	for {
 		showMenu()
 		scanner.Scan()
-		selectedOption = scanner.Text()
-		switch selectedOption {
-		case "1.1":
-			productEntry(scanner)
-		case "1.2":
+		opt = scanner.Text()
+		switch opt {
+		case "1":
+			addProduct(scanner)
+			fmt.Println("Press <enter> to continue...")
+			fmt.Println()
+			scanner.Scan()
+		case "2":
 			showProducts()
+			fmt.Println("Press <enter> to continue...")
+			fmt.Println()
+			scanner.Scan()
 		case "3":
 			fmt.Println("Thanks for your visit!")
 			break menu
+		default:
+			fmt.Printf("Sorry, %s is not listed in the menu option. Try again!\n\n", opt)			
 		}
 	}
 }
